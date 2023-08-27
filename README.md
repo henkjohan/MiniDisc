@@ -15,5 +15,14 @@ graph TD
 
   E --> I[user_script]
   H --> I
+```
 
+# Connections
+
+```mermaid
+graph TD
+  A[computer] --> B[RS232]
+  A --> C[audio_connection]
+  B --> D[MDS-E12]
+  C --> D
 ```
