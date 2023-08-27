@@ -11,4 +11,9 @@ graph TD
   B --> E[audio_handler]
   F[miniaudio] --> E
 
+  G[serial] --> H[SONY_MDS_E12]
+
+  E --> I[user_script]
+  H --> I
+
 ```
