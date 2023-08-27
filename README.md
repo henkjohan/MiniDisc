@@ -5,6 +5,10 @@ This interface module enables the user to interact with the player in such a way
 # Modules used and interaction
 ```mermaid
 graph TD
-  A[user script] --> B[MDS-E12]
+  A[ID3] --> B[mutagen]
+  C[MP3] --> B
+  D[FLAC] --> B
+  B --> E[audio_handler]
+  F[miniaudio] --> E
 
 ```
