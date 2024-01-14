@@ -5,16 +5,19 @@ This interface module enables the user to interact with the player in such a way
 # Modules used and interaction
 ```mermaid
 graph TD
-  A[ID3] --> B[mutagen]
-  C[MP3] --> B
-  D[FLAC] --> B
-  B --> E[audio_handler]
-  F[miniaudio] --> E
+  A[user_script] --> B[RS232]
+  B --> C[SONY_MDS_E12]
 
-  G[serial] --> H[SONY_MDS_E12]
+  A --> D[audio_handler]
+  D --> E[miniaudio]
+  E --> J[PC audio out]
+  J --> C
 
-  E --> I[user_script]
-  H --> I
+  F[mutagen] --> E
+  G[ID3] --> F
+  H[MP3] --> F
+  I[FlAC] --> F
+
 ```
 ## mutagen
 ID3, MP3 and FLAC are used from mutagen to extract metadata information from MP3 or FLAC files.
@@ -27,6 +30,7 @@ The miniaudio module is used to playback the track that we want to record on the
 
 # Connections
 The following connections need to be made between the computer and the MDS-E12.
+The audio connection can either be analog or digital.
 
 ```mermaid
 graph TD
